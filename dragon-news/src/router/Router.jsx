@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import CategoryNews from "../pages/CategoryNews";
 import Login from "../pages/Login";
 import AuthLayout from "../layout/AuthLayout";
+import Register from "../pages/Register";
 
 const router = createBrowserRouter(
     [
@@ -29,7 +30,11 @@ const router = createBrowserRouter(
                 {
                     path: '/auth/login',
                     element: <Login></Login>
-                }
+                },
+                {
+                    path: '/auth/register',
+                    element: <Register></Register>
+                },
             ]
         },
         {
