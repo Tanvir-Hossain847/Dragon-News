@@ -1,6 +1,7 @@
 import { BsEyeFill, BsStarFill } from "react-icons/bs";
 import { FiShare2 } from "react-icons/fi";
 import { LuBookMarked } from "react-icons/lu";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
   const {
@@ -11,6 +12,7 @@ const NewsCard = ({ news }) => {
     thumbnail_url,
     details,
     tags,
+    id,
   } = news;
 
   const formattedDate = new Date(author.published_date).toLocaleDateString();
@@ -55,10 +57,10 @@ const NewsCard = ({ news }) => {
       {/* Description */}
       <div className="px-5 text-sm text-gray-600 leading-relaxed">
         {details.slice(0, 220)}...
-        <span className="text-orange-500 font-medium cursor-pointer">
+        <Link to={`/news/${id}`} className="text-orange-500 font-medium cursor-pointer">
           {" "}
           Read More
-        </span>
+        </Link>
       </div>
 
       {/* Tags */}
